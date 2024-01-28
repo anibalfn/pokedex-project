@@ -10,5 +10,12 @@ pAPI.getPokemons = (offset = 0, limit = 10) => {
         .then((multiplePokemon) => multiplePokemon.map(pAPI))
         .then((details) => Promise.all(details))
         .then((pokemonData => pokemonData))
-        console.log(pokemonData);
+
 }
+
+// A função getPokemons é uma propriedade da pAPI, sendo que os parâmetros determinam a quantidade de pokémons na página
+// O return faz um fetch na URL e recebe uma resposta
+//Essa resposta vem em formato json e é solicitado os results
+// O map percorre o resultado e cria uma nova array
+// os details vem como promessa (assíncrono) e os dados são armazenados em pokemonsData
+
