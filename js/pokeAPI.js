@@ -1,50 +1,48 @@
-const pAPI = {}
-// Essa const vai servir para armazenar os dados advindos das outras funções
-
-function convertAPIdetails(details) {
-    const pokemon = new Pokemon()
-    pokemon.number = details.id
-    pokemon.name = details.name
-    pokemon.weight = details.weight
-    pokemon.height = details.height
-
-    // transforma os valores default nos meus personalizados
-
-    const pokeTypes = details.types.map((pokeTypeSlot) => pokeTypeSlot.type.name)
-    const [type] = pokeTypes
-
-    pokemon.pokeTypes = types;
-    pokemon.type = type;
-
-    // Se os pokémons possuem mais de um tipo, são guardados num array
-
-    pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
-
-    // Consome a img do pokémon da API
-
-    return pokemon;
-}
-
-pAPI.getPokemonDetails = (pokemon) => {
-    return fetch(pokemon.url)
-        .then((response) => response.json())
-        .then(convertAPIdetails)
-}
-
-pAPI.getPokemons = (offset = 0, limit = 10) => {
-    const apiURL = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
-
-    return fetch(apiURL)
-        .then((response) => response.json())
-        .then((pokeJson) => pokeJson.results)
-        .then((multiplePokemon) => multiplePokemon.map(pAPI))
-        .then((details) => Promise.all(details))
-        .then((pokemonData => pokemonData))
-
-}
-// A função getPokemons é uma propriedade da pAPI, sendo que os parâmetros determinam a quantidade de pokémons na página
-// O return faz um fetch na URL e recebe uma resposta
-//Essa resposta vem em formato json e é solicitado os results
-// O map percorre o resultado e cria uma nova array
-// os details vem como promessa (assíncrono) e os dados são armazenados em pokemonsData
-
+class PokeAPI {
+    async convertAPIdetailToPokemon(pokeDetail) {
+      const pokemon = new Pokemon();
+      pokemon.name = pokeDetail.name;
+      pokemon.number = pokeDetail.id;
+      pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
+      pokemon.types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
+      pokemon.type = pokemon.types[0];
+      return pokemon;
+    }
+  
+    // método async que recebe um objeto chamado pokeDetail, os detalhes da pokeAPI
+    // Uma nova classe Pokémon é instanciada e as props são preenchidas conforme o recebido em pokeDetail
+    // retorna o objeto restante
+  
+    async getPokemonDetail(pokemon) {
+      const response = await fetch(pokemon.url);
+      const pokeDetail = await response.json();
+      return this.convertAPIdetailToPokemon(pokeDetail);
+    }
+  
+    // asyc getPokemonDetail recebe o obj pokemon, faz requisição async via fetch da url fornecida em pokemon
+    // transforma a resposta em json e chama método convertAPI... para modificar os detalhes de acordo com o obj Pokemon
+  
+    async getPokemons(offset = 0, limit = 5) {
+      const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
+  
+      const response = await fetch(url);
+      const jsonBody = await response.json();
+      const pokemons = jsonBody.results;
+  
+      const detailRequests = pokemons.map(
+        async (pokemon) => await this.getPokemonDetail(pokemon)
+      );
+      const pokemonsDetails = await Promise.all(detailRequests);
+  
+      return pokemonsDetails;
+    }
+  }
+  
+  // offset = deslocamento; limit = limite da recuperação
+  // requisição async usando fetch e convertendo a resposta em json, extrai os resultados
+  // Promise.all aguarda a resolução de todas as promises, retornando a lista de detalhes
+  
+  const pokeAPI = new PokeAPI();
+  
+  // abstração para interagir de forma async e modular
+  
