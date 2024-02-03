@@ -3,6 +3,8 @@ class PokeAPI {
     const pokemon = new Pokemon();
     pokemon.name = pokeDetail.name;
     pokemon.number = pokeDetail.id;
+    pokemon.weight = pokeDetail.weight;
+    pokemon.height = pokeDetail.height;
     pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
     pokemon.types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
     pokemon.type = pokemon.types[0];
