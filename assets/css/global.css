@@ -3,18 +3,22 @@
     box-sizing: border-box;
 }
 
-.content {
-    background-color: rgb(78, 68, 68);
-    padding: 1rem
+body {
+    background-color: #40444b;
 }
 
-.content h1 {
-    margin: 0
-}
-
-
 .content {
+    width: 100vw;
+    height: 100vh;
     padding: 1rem;
-    display: flex;
-    flex-direction: column;
+    background-color: #413333;
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        max-width: 992px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
 }
