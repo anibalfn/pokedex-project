@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/pokedex.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="content">
+      <h1>Pokédex</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/pokedex.css">
-    <title>The Pokédex Project</title>
-</head>
+      <ol id="pokemonList" class="pokemons"></ol>
 
-<body>
-    <section>
-        <h1>The Pokédex Project</h1>
-        <ol class="pokemons" id="list">
-            
-        </ol>
-
+      <div class="pagination">
+        <button id="loadMore" type="button" class="button">More</button>
+      </div>
     </section>
-
-</body>
-
+    <script src="./assets/js/pokemonModel.js"></script>
+    <script src="./assets/js/pokeAPI.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>
