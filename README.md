@@ -11,7 +11,7 @@ Bem-vindo ao Pokédex Project! Este repositório contém o código-fonte para um
 
 
 ## Uso 🚀
-Depois de instalar as dependências, você pode iniciar a aplicação com o seguinte comando:
+Depois de instalar as dependências, você pode iniciar a aplicação com o seguinte comando: `npm start`
 
 Acesse a aplicação em seu navegador através do endereço [http://localhost:3000](http://localhost:3000).
 
