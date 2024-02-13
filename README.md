@@ -1,37 +1,25 @@
-# Pokédex Project 📱
+# Pokédex Project 📚
 
-Este é um projeto de Pokédex desenvolvido com Angular.
+## Introdução 🚀
+Bem-vindo ao Pokédex Project! Este repositório contém o código-fonte para uma Pokédex virtual, onde você pode explorar informações sobre vários Pokémon.
 
-## Descrição 📝
+## Instalação 🔧
+1. Certifique-se de ter o Node.js instalado em sua máquina.
+2. Clone este repositório usando o seguinte comando: `git clone https://github.com/anibalfn/pokedex-project.git`
+3. Navegue até o diretório do projeto: `cd pokedex-project`
+4. Instale as dependências usando npm ou yarn: `npm install`
 
-O Pokédex Project é uma aplicação web desenvolvida com Angular que permite aos usuários explorar informações sobre diferentes Pokémons. Ele fornece uma interface intuitiva e agradável para buscar e visualizar detalhes de cada Pokémon, como tipo, habilidades e estatísticas.
 
-## Funcionalidades ⚙️
+## Uso 🚀
+Depois de instalar as dependências, você pode iniciar a aplicação com o seguinte comando:
 
-- Pesquisa por Pokémon pelo nome ou número da Pokédex.
-- Visualização detalhada de informações sobre cada Pokémon.
-- Filtragem por tipo de Pokémon.
-- Interface amigável e responsiva para uma ótima experiência do usuário.
-
-## Tecnologias Utilizadas 🛠️
-
-- Angular
-- HTML
-- CSS
-- TypeScript
-- PokéAPI (https://pokeapi.co/)
-
-## Instalação 🚀
-
-1. Clone este repositório: `git clone https://github.com/anibalfn/pokedex-project.git`
-2. Instale as dependências: `npm install`
-3. Execute o servidor de desenvolvimento: `ng serve`
-4. Abra seu navegador e acesse `http://localhost:4200/`
+Acesse a aplicação em seu navegador através do endereço [http://localhost:3000](http://localhost:3000).
 
 ## Contribuição 🤝
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-Contribuições são bem-vindas! Se você quiser melhorar este projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+## Licença 📝
+Este projeto está licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
 
-## Autor 🧑‍💻
 
-Este projeto foi desenvolvido por [Aníbal F](https://github.com/anibalfn).
+
